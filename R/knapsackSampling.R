@@ -42,9 +42,10 @@ flip01 <- function(x) {
 #' @return a list containing matrix, signs and RHS constants
 #'
 unlist.constr <- function(constraints) {
+    constr.mat = constr.dir = constr.rhs = NULL
     list(constr.mat=do.call(rbind, constraints %[[% constr.mat),
-        constr.dir=do.call(c, constraints %[[% constr.dir),
-        constr.rhs=do.call(c, constraints %[[% constr.rhs))
+         constr.dir=do.call(c,     constraints %[[% constr.dir),
+         constr.rhs=do.call(c,     constraints %[[% constr.rhs))
 } #unlist.constr
 
 
@@ -85,7 +86,7 @@ initState <- function(numVar, objVec=runif(numVar), constraints=NULL) {
 #' @param numSampl - number of samples to be generated
 #' @param maxIter - maximum number of iterations to be run to prevent infinite loop
 #' @param constraints - a list of list of constraints with constr.mat, constr.dir, constr.rhs in each sublist
-#'
+#'     Please see example for an example of constraints.
 #' @return a matrix of {0, 1} with each row representing a portfolio
 #'
 #' @examples
