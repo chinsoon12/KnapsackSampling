@@ -17,7 +17,7 @@ sampl.mcmc(init, numSampl, maxIter = 2 * numSampl, constraints = NULL)
 Please see example for an example of constraints.}
 }
 \value{
-a matrix of {0, 1} with each row representing a portfolio
+a matrix of {0, 1} with each row representing a sample
 }
 \description{
 Generate feasible solutions to a knapsack problem using Markov Chain Monte Carlo

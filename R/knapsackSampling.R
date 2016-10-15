@@ -85,9 +85,9 @@ initState <- function(numVar, objVec=runif(numVar), constraints=NULL) {
 #' @param init - an initial feasible solution
 #' @param numSampl - number of samples to be generated
 #' @param maxIter - maximum number of iterations to be run to prevent infinite loop
-#' @param constraints - a list of list of constraints with constr.mat, constr.dir, constr.rhs in each sublist
+#' @param constraints - a list of list of constraints with constr.mat, constr.dir, constr.rhs in each sublist.
 #'     Please see example for an example of constraints.
-#' @return a matrix of {0, 1} with each row representing a portfolio
+#' @return a matrix of {0, 1} with each row representing a sample
 #'
 #' @examples
 #'
