@@ -1,20 +1,4 @@
 ##############################################################################################################################
-#' Accessing the same named list elements of a list of lists
-#'
-#' @references
-#' credits to @kohske, Accessing same named list elements of the list of lists in R,
-#' http://stackoverflow.com/questions/5935673/accessing-same-named-list-elements-of-the-list-of-lists-in-r/5936077#5936077
-#'
-#' @param x - a list of sublists with same elements in each sublist
-#' @param n - name of element to be accessed from each sublist
-#'
-#' @return list of elements of name n in each sublist
-#'
-'%[[%' <- function(x, n) sapply(x, '[[', as.character(as.list(match.call())$n))
-
-
-
-##############################################################################################################################
 #' Flip a 1 and a 0 simultaneously
 #'
 #' @param x an integer or logical vector
@@ -43,9 +27,9 @@ flip01 <- function(x) {
 #'
 unlist.constr <- function(constraints) {
     constr.mat = constr.dir = constr.rhs = NULL
-    list(constr.mat=do.call(rbind, constraints %[[% constr.mat),
-         constr.dir=do.call(c,     constraints %[[% constr.dir),
-         constr.rhs=do.call(c,     constraints %[[% constr.rhs))
+    list(constr.mat=do.call(rbind, lapply(constraints, with, constr.mat),
+         constr.dir=do.call(c,     lapply(constraints, with, constr.dir),
+         constr.rhs=do.call(c,     lapply(constraints, with, constr.rhs))
 } #unlist.constr
 
 
