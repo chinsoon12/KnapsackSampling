@@ -27,9 +27,10 @@ flip01 <- function(x) {
 #'
 unlist.constr <- function(constraints) {
     constr.mat = constr.dir = constr.rhs = NULL
-    list(constr.mat=do.call(rbind, lapply(constraints, with, constr.mat),
-         constr.dir=do.call(c,     lapply(constraints, with, constr.dir),
+    list(constr.mat=do.call(rbind, lapply(constraints, with, constr.mat)),
+         constr.dir=do.call(c,     lapply(constraints, with, constr.dir)),
          constr.rhs=do.call(c,     lapply(constraints, with, constr.rhs))
+         )
 } #unlist.constr
 
 
