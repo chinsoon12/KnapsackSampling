@@ -7,8 +7,19 @@
 #'
 flip01 <- function(x) {
     #store index to prevent flipping the same bit again
-    idx0 <- sample(which(x==0L), 1)
-    idx1 <- sample(which(x==1L), 1)
+    zeroIdxs <- which(x==0L)
+    if (length(zeroIdxs) == 1) {
+        idx0 <- zeroIdxs
+    } else {
+        idx0 <- sample(zeroIdxs, 1)
+    }
+    
+    onesIdxs <- which(x==1L)
+    if (length(onesIdxs) == 1) {
+        idx1 <- onesIdxs
+    } else {
+        idx1 <- sample(onesIdxs, 1)    
+    }    
 
     #flip the bits
     x[idx0] <- 1L; x[idx1] <- 0L
