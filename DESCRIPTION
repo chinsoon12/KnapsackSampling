@@ -1,7 +1,7 @@
 Package: KnapsackSampling
 Title: Generate Feasible Samples of a Knapsack Problem
-Version: 0.1.0
-Date: 2016-10-15
+Version: 0.1.1
+Date: 2024-01-31
 Author: Chin Soon Lim [aut]
 Maintainer: Chin Soon Lim <chinsoon12@hotmail.com>
 Description: The sampl.mcmc function creates samples of the feasible region of a knapsack problem with both equalities and inequalities constraints.
