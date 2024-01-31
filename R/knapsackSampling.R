@@ -36,6 +36,8 @@ flip01 <- function(x) {
 #'
 #' @return a list containing matrix, signs and RHS constants
 #'
+#' @noRd
+#' 
 unlist.constr <- function(constraints) {
     constr.mat = constr.dir = constr.rhs = NULL
     list(constr.mat=do.call(rbind, lapply(constraints, with, constr.mat)),
